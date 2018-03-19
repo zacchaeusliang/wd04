@@ -19,7 +19,8 @@ const PORT = process.env.PORT || 3000
   GET ONE BY SIGNING UP AT openweathermap.org
   THE KEY BELOW IS FAKE
 */
-const WEATHER_API_KEY = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' //PUT IN YOUR OWN KEY HERE
+//const WEATHER_API_KEY = '6c2c936aab805d349ddee4cd2fed0ffc' //PUT IN YOUR OWN KEY HERE
+const API_KEY = '63aa420eb4e6bcd8d163e6dcdb52caa9'
 
 const app = express()
 
@@ -31,13 +32,14 @@ app.get('/', (request, response) => {
   response.sendFile(__dirname + '/views/index.html')
 })
 
-app.get('/weather', (request, response) => {
-  let city = request.query.city
-  if(!city) {
-    return response.json({message: 'Please enter a city name'})
+app.get('/recipe', (request, response) => {
+  let ingredient = request.query.ingredient
+  if(!ingredient) {
+    return response.json({message: 'Please enter an ingredient'})
   }
-  const url = `api/search?q=${ingredient}&key=`
+  const url = `http://www.food2fork.com/api/search?q=${ingredient}&key=${API_KEY}`
   requestModule.get(url, (err, res, data) => {
+    if(err){console.log(err);}
     return response.contentType('application/json').json(JSON.parse(data))
   })
 })
