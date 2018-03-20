@@ -12,23 +12,36 @@ function getRecipes() {
 
     xhr.onreadystatechange = () => {
         if (xhr.readyState == 4 && xhr.status == 200) {
-          //console.log(xhr.responseText);
+
+
+            /*
+
+            console.log(xhr.responseText);
             let response = JSON.parse(xhr.responseText)
             let recipes = response.recipes;
             console.log(recipes);
             ingredientDiv.innerHTML = ingredientDiv.innerHTML +
-              `<h1>Results for ${ingredientName} </h1>`;
+              `<h1>Results for ${ingredientName} </h1>
+              <p>
+              `;
             for(i in recipes){
-              /*var title = recipes[i].title;
+              var title = recipes[i].title;
               ingredientDiv.innerHTML = ingredientDiv.innerHTML +
-                `<p> ${title} </p>`*/
+                `<p> ${title} </p>`
 
               var recipe = recipes[i];
               var title = recipe.title;
               var imageURL = recipe.image_url;
+              var f2fURL = recipe.f2f_url;
+
               ingredientDiv.innerHTML = ingredientDiv.innerHTML +
-                `<img src=${imageURL} alt=${title} width="200" height="200">`
+              `<a href="${f2fURL}" target="_blank">
+              <img border="0" alt="Image cannot be displayed." src="${imageURL}" width="100" height="100">
+              </a>`
             }
+
+            ingredientDiv.innerHTML = ingredientDiv.innerHTML +  `</p>`
+
             //console.log(response);
  			    /*cityDiv.innerHTML = cityDiv.innerHTML + `
 			       <h1>Results for ${response.name} </h1>
@@ -38,6 +51,8 @@ function getRecipes() {
 			       <li>Desc: ${response.weather[0].description}</li>
 			       </ul>
 			       `*/
+             
+             ingredientDiv.innerHTML += xhr.responseText;
         }
     }
     xhr.open('GET', `/recipe?ingredient=${ingredientName}`, true)
