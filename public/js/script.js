@@ -51,7 +51,7 @@ function getRecipes() {
 			       <li>Desc: ${response.weather[0].description}</li>
 			       </ul>
 			       `*/
-             
+
              ingredientDiv.innerHTML += xhr.responseText;
         }
     }
