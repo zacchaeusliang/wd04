@@ -1,6 +1,8 @@
-Zaccaheus leung and robert Kozak  comp 2406 assingment
+----------- 2406 Assignment 4 ------------
 
-Shows recipes by search
+Robert Kozak - 101032361
+Zaccaheus leung- 101035212
+
 To install npm modules execute:
 >npm install
 
@@ -12,8 +14,11 @@ or
 >node server.js
 
 
-To see the JSON object returned by the openweather.org API use your browser to visit:
-http://localhost:3000/
-
 To see the "app" version use your browser to visit:
 http://localhost:3000
+
+To manually enter recipe visit:
+http://localhost:300/recipe?ingredient=####
+
+or 2 recipes:
+http://localhost:300/recipe?ingredient=####,####

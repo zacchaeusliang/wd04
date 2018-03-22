@@ -99,8 +99,10 @@ app.listen(PORT, err => {
   if(err) console.log(err)
   else {
     console.log(`Server listening on port: ${PORT}`)
-    console.log(`To Test:  http://localhost:3000/weather?city=Ottawa`)
+    console.log(`To Test:  http://localhost:3000/recipe?ingredient=Chocolate`)
+    console.log(`To Test:  http://localhost:3000/recipe?ingredient=Chocolate,Banana`)
     console.log(`To Test: http://localhost:3000`)
+
 
   }
 })
