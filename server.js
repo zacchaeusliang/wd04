@@ -74,7 +74,7 @@ app.get('/recipe', (request, response) => {
 
       responseContent = responseContent +
       `<a href="${f2fURL}" target="_blank">
-      <img border="0" alt="Image cannot be displayed." src="${imageURL}" width="100" height="100">
+      <img border="0" alt="Image cannot be displayed." title="${title}" src="${imageURL}" width="100" height="100">
       </a>`
     }
 

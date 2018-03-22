@@ -22,3 +22,5 @@ http://localhost:300/recipe?ingredient=####
 
 or 2 recipes:
 http://localhost:300/recipe?ingredient=####,####
+
+NOTE: You can mouse over the pictures to see the Title.
